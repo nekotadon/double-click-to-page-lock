@@ -1,0 +1,11 @@
+{
+    "name": {
+        "message": "Double-click to page lock"
+    },
+    "description": {
+        "message": "Double-clicking on the margins of a web page toggles the locked state. If locked, open the link in a new tab."
+    },
+    "icon": {
+        "message": "About Double-click to page lock"
+    }
+}

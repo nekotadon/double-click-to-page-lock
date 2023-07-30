@@ -1,0 +1,11 @@
+{
+    "name": {
+        "message": "Double-click to page lock"
+    },
+    "description": {
+        "message": "ウェブページの余白をダブルクリックすると、ロック状態が切り替わります。ロック中はリンクを新しいタブで開きます。"
+    },
+    "icon": {
+        "message": "Double-click to page lockについて"
+    }
+}
