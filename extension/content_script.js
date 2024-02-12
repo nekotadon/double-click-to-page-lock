@@ -69,9 +69,35 @@ document.addEventListener("mouseup", (event) => {
     if (doubleClickStep == 4) {
         //double click
         if (new Date() - date0 <= 450) {
-            //change locked mark visible
-            let fixed_ele = document.getElementById(lockMarkId);
-            fixed_ele.style.display = fixed_ele.style.display == "none" ? "inline" : "none";
+
+            //Is the text selected?
+            let isTextSelected = false;
+
+            let s = document.getSelection();//Selection
+            let node0 = s.anchorNode;//Start Node
+            let node1 = s.focusNode;//End Node
+
+            if (node0 != null && node1 != null && node0 == node1) {//Start Node == End Node
+                if (node0.parentElement != null && node1.parentElement != null && node0.parentElement == node1.parentElement) {//Start Element == End Element
+                    let x = event.clientX;
+                    let y = event.clientY;
+                    if (x != null && y != null) {
+                        let element = document.elementFromPoint(x, y);
+                        if (element == node0.parentElement) {//Start Element == Element under the mouse
+                            if (s.toString().trim() != "") {//If selection text is not empty
+                                isTextSelected = true;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //If text is not selected,
+            if (!isTextSelected) {
+                //change locked mark visible
+                let fixed_ele = document.getElementById(lockMarkId);
+                fixed_ele.style.display = fixed_ele.style.display == "none" ? "inline" : "none";
+            }
         }
         doubleClickStep = 0;
     }
