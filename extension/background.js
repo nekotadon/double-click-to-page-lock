@@ -10,12 +10,14 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 });
 
 chrome.runtime.onInstalled.addListener(() => {
+    /*
     chrome.tabs.create(
         {
             url: "license.html",
             active: true
         }
     );
+    */
 });
 
 chrome.action.onClicked.addListener((tab) => {
